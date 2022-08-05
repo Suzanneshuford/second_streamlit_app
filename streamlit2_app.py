@@ -25,11 +25,11 @@ fruits_to_show = my_fruit_list.loc[fruits_selected]
 #display the table on the page
 streamlit.dataframe(fruits_to_show)
 
-#newsection to display fruityvice API
+# new section to display fruityvice API response
 streamlit.header("Fruityvice Fruit Advice!")
 try:
   fruit_choice = streamlit.text_input('What fruit would you like information about?')
-  if not furit_choice:
+  if not fruit_choice:
     streamlit.error("Please select a fruit to get information.")
   else:
     fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + fruit_choice)
